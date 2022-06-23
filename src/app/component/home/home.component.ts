@@ -112,7 +112,7 @@ export class HomeComponent implements OnInit {
         name: "Website project",
         description: "Angular website made with primeng",
         href: "https://marcino8.github.io/DentalApp",
-        source: "https://github.com/marcino8/Flow-shop",
+        source: "https://github.com/marcino8/DentalApp",
         image: "https://raw.githubusercontent.com/marcino8/Portfolio/master/img/angular.png"
       },
       {
@@ -127,5 +127,11 @@ export class HomeComponent implements OnInit {
 
   navToUrl(source: string) {
     document.location.href = source;
+  }
+
+  navToUrlDental(name: string) {
+    if(name === 'Website project'){
+      document.location.href = 'https://marcino8.github.io/DentalApp';
+    }
   }
 }

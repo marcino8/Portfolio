@@ -99,6 +99,7 @@
                           icon="pi pi-github"></p-button>
                 <p-button [routerLink]="project.href"
                           *ngIf="project.href"
+                          (click)="navToUrlDental(project.name)"
                           type="button" label="Open Project"
                           styleClass="p-button p-button-outlined p-button-rounded mr-2"
                           icon="pi pi-folder-open"></p-button>
