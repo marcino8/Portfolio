@@ -12,6 +12,7 @@ import {Project7Component} from "./component/project7/project7.component";
 
 const routes: Routes = [
   {path : '', component : HomeComponent},
+  {path : 'Portfolio', redirectTo: ''},
   {path : 'project1', component : Project1Component},
   {path : 'project2', component : Project2Component},
   {path : 'project3', component : Project3Component},
