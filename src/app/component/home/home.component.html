@@ -1,0 +1,112 @@
+<div class="row">
+  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+    <h1>About Me</h1>
+    <div class="card">
+
+      <p-divider align="center">
+        <div class="inline-flex align-items-center">
+          <img [src]="'http://127.0.0.1:8080/photo.png'" width="200" class="shadow-2 logo"/>
+          <h2>Marcin Klimczak</h2>
+        </div>
+      </p-divider>
+
+      <p>I am an ambitious student with an affection towards programming, algorythms, dogs, pandas and swimming</p>
+
+      <p-divider align="center">
+          <span class="p-tag">
+            Studies
+           <i class="pi pi-bookmark"></i>
+          </span>
+      </p-divider>
+
+      <div class="studies-wrapper">
+        <p>Proud student of AGH University of Science and Technology </p>
+        <img [src]="'http://127.0.0.1:8080/agh.jpg'" width="100" class="shadow-2 logo"/>
+      </div>
+
+      <p-divider align="center">
+          <span class="p-tag">
+            Skills
+            <i class="pi pi-palette"></i>
+          </span>
+      </p-divider>
+
+      <h5>Data Skills</h5>
+      <p>Data visualization, Data analysis, Data filtering and preprocessing, Heuristics, R Lang, ggplot2, pandas</p>
+      <h5>Programming Skills</h5>
+      <p>Java, Springboot, REST, Angular, TypeScript/JavaScript, C#, Python, PromQL, Prometheus API, Grafana, Docker, Tomcat, Git, Jira</p>
+      <p>Below, in <b>My Projects</b> section you can see my skills in use</p>
+      <p-divider align="center">
+          <span class="p-tag">
+            Contact
+            <i class="pi pi-phone"></i>
+          </span>
+      </p-divider>
+
+      <h4>Phone: 507449919</h4>
+      <h4>Email: mklimczak7@gmail.com</h4>
+
+
+    </div>
+  </div>
+  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+    <h1>Experience</h1>
+    <div class="card">
+      <p-timeline [value]="events1"  align="alternate" styleClass="customized-timeline">
+        <ng-template pTemplate="marker" let-event>
+            <span class="custom-marker shadow-2" [style.backgroundColor]="event.color">
+                <i [ngClass]="event.icon"></i>
+            </span>
+        </ng-template>
+        <ng-template pTemplate="content" let-event>
+          <p-card [header]="event.company" [subheader]="event.date">
+            <img *ngIf="event.image" [src]="event.image" [alt]="event.name" width="100" class="shadow-2 logo" />
+            <h4>{{event.position}}</h4>
+            <h5>{{event.mainTechnologies}}</h5>
+            <p>Other: {{event.otherTechnologies}}</p>
+            <p>{{event.description}}</p>
+          </p-card>
+        </ng-template>
+      </p-timeline>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+    <p-carousel [value]="projects"
+                [numVisible]="3"
+                [numScroll]="3" [circular]="true"
+                [responsiveOptions]="responsiveOptions">
+      <ng-template pTemplate="header">
+        <h1>My Projects</h1>
+      </ng-template>
+      <ng-template let-project pTemplate="item">
+        <div class="product-item">
+          <div class="product-item-content">
+            <div class="mb-3">
+              <h2>
+                {{project.name}}
+              </h2>
+              <img [src]="project.image" width="100"/>
+            </div>
+            <div>
+              <p class="mb-1">{{project.description}}</p>
+              <div class="car-buttons mt-5">
+                <p-button (click) = "navToUrl(project.source)"
+                          *ngIf="project.source"
+                          type="button" label="Github"
+                          styleClass="p-button p-button-outlined p-button-rounded  p-button-secondary mr-2"
+                          icon="pi pi-github"></p-button>
+                <p-button [routerLink]="project.href"
+                          *ngIf="project.href"
+                          type="button" label="Open Project"
+                          styleClass="p-button p-button-outlined p-button-rounded mr-2"
+                          icon="pi pi-folder-open"></p-button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </p-carousel>
+  </div>
+</div>

@@ -1,1 +1,93 @@
-/* You can add global styles to this file, and also import other style files */
+html, body {
+  height: 100%;
+  width: 100%;
+}
+.custom-marker {
+  display: flex;
+  width: 2rem;
+  height: 2rem;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.logo {
+  margin: 10px auto 10px auto !important;
+  border-radius: 10px;
+}
+
+::ng-deep {
+  .p-timeline-event-content,
+  .p-timeline-event-opposite {
+    line-height: 1;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  ::ng-deep {
+    .customized-timeline {
+      .p-timeline-event:nth-child(even) {
+        flex-direction: row !important;
+
+        .p-timeline-event-content {
+          text-align: left !important;
+        }
+      }
+
+      .p-timeline-event-opposite {
+        flex: 0;
+      }
+
+      .p-card {
+        margin-top: 1rem;
+      }
+    }
+  }
+}
+
+.main {
+  ;
+}
+
+.product-item {
+  .product-item-content {
+    border: 1px solid var(--surface-d);
+    border-radius: 3px;
+    margin: .3rem;
+    text-align: center;
+    padding: 2rem 0;
+  }
+
+  .product-image {
+    width: 50%;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
+  }
+}
+
+.p-tag {
+  font-size: 1.5rem !important;
+}
+
+.studies-wrapper {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+
+.car-buttons {
+  button {
+    margin: 10px;
+  }
+}
+
+h1 {
+  text-align: center;
+  margin: 25px;
+}
+
+.card {
+  border: none !important;
+  margin: 25px;
+}

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {PrimeIcons, PrimeNGConfig} from "primeng/api";
 
 @Component({
   selector: 'app-root',
